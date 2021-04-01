@@ -1,0 +1,540 @@
+/* This class's are for NON 3D Rendering of layers
+    For 3D rendering use stackUpStyle.css
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #ccc;
+}
+
+.stackupSetup {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-auto-columns: minmax(10px, auto)!important;
+}
+
+.stackupOutter {
+    margin: 20px 0px 40px 0px;
+    align-items: center;
+    /* overflow-y: scroll; */
+}
+
+.stackUp {
+    position: relative;
+    /* top: 0%; */
+    /*left: 0%; */
+    transform: rotateX(0deg) rotateY(0deg);
+    /* margin: 0; */
+    /* padding: 0; */
+    /* display: flex; */
+    margin: auto;
+    padding: 0;
+    display: flex;
+    width: 40%;
+}
+
+.stackUp .layerClass {
+    list-style: none;
+}
+
+.stackUp .layerClass a .fa {
+    font-size: 40px;
+    color: #262626;
+    line-height: 80px;
+    transition: .5s;
+}
+
+.topLabel {
+    top: 160px!important;
+}
+
+.botLabel {
+    top: 200px!important;
+    /* bottom: 0px!important; */
+}
+
+.label {
+    font-size: 14px;
+    position: absolute;
+    top: 180px;
+    left: 290px;
+    /* left: 455px; */
+    /* height: 100%; */
+    /* width: 150px; */
+    white-space: nowrap;
+}
+
+.label_over {
+    z-index: 99;
+    font-size: 14px;
+    position: absolute;
+    top: 180px;
+    left: 390px;
+    /* left: 350px; */
+    /* height: 100%; */
+    /* width: 150px; */
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.label_over_iso {
+    z-index: 99;
+    font-size: 14px;
+    position: absolute;
+    top: 180px!important;
+    left: 390px;
+    /* left: 300px; */
+    /* height: 100%; */
+    /* width: 150px; */
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.stackUp .layerClass a {
+    /* position: absolute;
+    display: block;
+    height: 20px;
+    min-width: 55%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden; */
+    /* z-index: 0; */
+}
+
+.stackUp .layerClass a {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 400px;
+    /* background: #fff; */
+    text-align: center;
+    transform: perspective(1000px) rotate(-60deg) skew(30deg) translate(0, 0);
+    transition: .5s;
+    box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    /* z-index: 0; */
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 0px 2px black; 
+}
+
+.stackUp .layerClass a:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -30px;
+    height: 100%;
+    width: 30px;
+    /* background: #b1b1b1; */
+    transition: .5s;
+    transform: rotate(0deg) skewY(-25deg);
+    /* box-shadow: inset 1px 1px 10px 0px #000000; */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    border: 2px solid black;
+}
+
+.stackUp .layerClass a:after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: -15px;
+    height: 13px;
+    width: 100%;
+    /* background: #b1b1b1; */
+    transition: .5s;
+    transform: rotate(0deg) skewX(-65deg);
+    /* box-shadow: inset 1px 1px 10px 0px #000000; */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    border: 2px solid black;
+}
+
+.stackUp .layerClass:hover .fa {
+    color: #fff;
+    -webkit-backface-visibility: hidden;
+}
+
+.copperLayer {
+    background: #db8c32;
+}
+
+.copperLayer:after {
+    background: #db8c32;
+}
+
+.copperLayer:before {
+    background: #db8c32;
+}
+
+.isolator {
+    background: #f7f7a1;
+}
+
+.isolator:after {
+    background: #f7f7a1;
+}
+
+.isolator:before {
+    background: #f7f7a1;
+    /*,529f0c*/
+}
+
+.mask {
+    background: #529f0c;
+}
+
+.mask:after {
+    background: #529f0c;
+}
+
+.mask:before {
+    background: #529f0c;
+    /*,529f0c*/
+}
+
+.core {
+    background: #efefef;
+}
+
+.core:after {
+    background: #efefef;
+}
+
+.core:before {
+    background: #efefef;
+}
+
+.gold:after {
+    background: inherit;
+}
+
+.gold:before {
+    background: inherit;
+}
+
+.coreSecondLayerBottom {
+    transform: perspective(1000px) rotate(-60deg) skew(30deg) translate(24px, -10px)!important;
+}
+
+.coreSecondLayerTOP {
+    transform: perspective(1000px) rotate(-60deg) skew(30deg) translate(-24px, 10px)!important;
+}
+
+
+/* .coreSecondLayerBottom {
+    transform: perspective(1000px) rotate(0deg) skew(0deg) translate(0px, -20px)!important;
+}
+
+.coreSecondLayerTOP {
+    transform: perspective(1000px) rotate(0deg) skew(0deg) translate(0px, 20px)!important;
+} */
+
+.coreBread {
+    background: #db8c32!important;
+}
+
+.coreBread:after {
+    background: inherit!important;
+}
+
+.coreBread:before {
+    background: inherit!important;
+}
+
+.highlighs {
+    transition: transform 2s;
+    animation: blinker 1s alternate infinite;
+    /* animation:  */
+}
+
+@keyframes blinker {
+    0% {
+        opacity: .6;
+    }
+    /* 40%{opacity: .6;} */
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blinker {
+    0% {
+        opacity: .6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.drill {
+    position: absolute;
+    transform: translate(100px, 60px);
+    /* margin: 0px auto; */
+    height: 20%;
+    width: 21px;
+    /* transition: transform 2s; */
+    /* background-color: #e46c0b; */
+}
+
+
+/* .drill:nth-child(3){
+    transform: translate(100px, 60px);
+}
+.drill:nth-child(2){
+    transform: translate(160px, 60px);
+}
+.drill:nth-child(1){
+    transform: translate(40px, 60px);
+} */
+
+.arrow-down {
+    position: absolute;
+    bottom: -8px;
+    left: 1px;
+    /* border-color: #e46c0b transparent; */
+    /* border-style: solid; */
+    /* border-width: 10px 10px 0px 10px; */
+    height: 0px;
+    width: 0px;
+    display: inline-block;
+    padding: 6px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+
+/* .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  } */
+
+
+/* Drill Tech = " Mechanical" */
+
+.PTH {
+    width: 18px;
+    /* background-color: white!important; */
+    border: 2px solid #b66d31!important;
+    border-bottom-style: none!important;
+}
+
+.PTH .arrow-down {
+    padding: 5px;
+    /* background-color: white!important; */
+    border: 1px solid #b66d31;
+    border-width: 0 3px 3px 0;
+}
+
+.PTH_and_via {
+    width: 18px;
+    /* background-color: white!important; */
+    border: 2px solid #867135!important;
+    border-bottom-style: none!important;
+}
+
+.PTH_and_via .arrow-down {
+    padding: 5px;
+    /* background-color: white!important; */
+    border: 1px solid #867135;
+    border-width: 0 3px 3px 0;
+}
+
+.NPTH {
+    width: 18px;
+    border: 2px solid #000!important;
+    border-bottom-style: none!important;
+}
+
+.NPTH .arrow-down {
+    padding: 5px;
+    border: 1px solid #000;
+    border-width: 0 3px 3px 0;
+}
+
+.PTH_and_NPTH {
+    width: 18px;
+    border: 2px dashed #b66d31!important;
+    border-bottom-style: none!important;
+}
+
+.PTH_and_NPTH .arrow-down {
+    padding: 5px;
+    border: 1px dashed #b66d31;
+    border-width: 0 3px 3px 0;
+}
+
+.PTH_and_NPTH_and_via {
+    width: 18px;
+    border: 2px dashed #867135!important;
+    border-bottom-style: none!important;
+}
+
+.PTH_and_NPTH_and_via .arrow-down {
+    padding: 5px;
+    border: 1px dashed #867135;
+    border-width: 0 3px 3px 0;
+}
+
+
+/* Drill Tech = "Laser" */
+
+.microVia {
+    height: 0px;
+    background-color: transparent!important;
+    /* border: 2px solid #e46c0b!important; */
+    /* border-bottom-style: none!important; */
+    border-left: 10px solid transparent!important;
+    border-right: 10px solid transparent!important;
+    border-bottom: 150px solid #b66d31;
+    /* transform: rotate(180deg); */
+}
+
+.microVia.none {
+    background-color: transparent!important;
+}
+
+
+/* For making .microVia hollow need to add a div extra and set this class to it */
+
+.microViaNone {
+    position: absolute;
+    top: 30px;
+    left: -6px;
+    width: 0;
+    border-left: 7px solid transparent!important;
+    border-right: 7px solid transparent!important;
+    border-bottom: 117px solid white;
+    /* transform: rotate(180deg); */
+}
+
+
+/* ----------------------------------------------------------------------------- */
+
+.microVia .arrow-down {
+    display: none;
+}
+
+
+/* Drill Tech = "Controlled depth" */
+
+.via {
+    height: 15%;
+    width: 21px;
+    background-color: white;
+    border: 2px solid #b66d31!important;
+    border-bottom-style: none!important;
+}
+
+.via .arrow-down {
+    background-color: white;
+    border: 1px solid #b66d31;
+    border-width: 0 3px 3px 0;
+}
+
+
+/* ----------- FILLING ----------- */
+
+.none {
+    background-color: white!important;
+}
+
+.none .arrow-down {
+    background-color: white!important;
+}
+
+.Resinfilling {
+    background-color: #ddd9c3!important;
+}
+
+.Resinfilling .arrow-down {
+    background-color: #ddd9c3!important;
+}
+
+.Resinfilling.microVia {
+    background-color: transparent!important;
+}
+
+.Resinfilling>.microViaNone {
+    border-bottom-color: #ddd9c3!important;
+}
+
+.CopperFilling {
+    background-color: #e46c0b!important;
+}
+
+.CopperFilling .arrow-down {
+    background-color: #e46c0b!important;
+}
+
+.CopperFilling.microVia {
+    background-color: transparent!important;
+}
+
+.CopperFilling>.microViaNone {
+    border-bottom-color: #e46c0b!important;
+}
+
+.pressCycle {
+    position: absolute;
+    transform: translate(0px, 60px);
+    border: 2px solid red;
+    border-right: none;
+    height: 660px;
+    width: 0px;
+    background-color: transparent;
+    transition: transform 2s;
+}
+
+.pressCycle:hover {
+    animation: blinker 1s alternate infinite;
+    /* animation:  */
+}
+
+.arrow-right-start {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid red;
+    margin-right: 0px;
+    margin-left: auto;
+    position: relative;
+    top: -10px;
+}
+
+.arrow-right-end {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid red;
+    position: absolute;
+    bottom: -10px;
+    right: 0px;
+}
+.pressNum{
+	font-weight:700;
+	
+	color:red;
+    position: absolute;
+    top:50%;
+    left:5px;
+}
+
+@media print {
+	.noPrint {
+		display: none;
+	}
+	body {
+		background-color: #FFF!important;
+	}
+	html
+    {
+        zoom: 70%;
+    }
+}

@@ -1,0 +1,316 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #ccc;
+}
+
+#outputLayout {
+    display: grid!important;
+    grid-template-columns: 40% 60%!important;
+}
+
+#stackUpView {
+    display: grid!important;
+    grid-template-columns: 30% 70%;
+}
+
+#stackUpView table th {
+    padding: 3px!important;
+}
+
+#stackUpView table td {
+    padding: 3px!important;
+}
+
+#stackUpView table {
+    width: auto;
+    margin: 0 auto;
+    /* word-wrap: unset; */
+}
+
+@media only screen and (max-width: 1367px) {
+    #stackUpView {
+        display: grid!important;
+        grid-template-columns: 100%;
+    }
+    /* #stackUpView table th {
+        padding: 5px!important;
+    }
+    #stackUpView table td {
+        padding: 5px!important;
+    } */
+}
+
+.stackupOutter {
+    /* position: absolute; */
+    /* padding: 40px; */
+}
+
+.stackUp {
+    position: relative;
+    /*top: 0%;
+    left: 0%; */
+    transform: rotateX(70deg) rotateY(0deg);
+    /* transform-style: preserve-3d; */
+    margin: auto;
+    padding: 0;
+    display: flex;
+    width: 50%;
+}
+
+.stackUp .layerClass {
+    list-style: none;
+    margin: 0 40px;
+}
+
+.stackUp .layerClass a .fa {
+    font-size: 40px;
+    color: #262626;
+    line-height: 80px;
+    transition: .5s;
+}
+
+.stackUp .layerClass {
+    position: absolute;
+}
+
+.topLabel {
+    top: 0px!important;
+}
+
+.botLabel {
+    top: 110px!important;
+    /* bottom: 0px!important; */
+}
+
+.label {
+    font-size: 38px;
+    position: absolute;
+    top: 75px;
+    left: 280px;
+    transform: rotateX(0deg) rotateY(-60deg);
+    /* height: 100%; */
+    /* width: 100%; */
+}
+
+.stackUp .layerClass a {
+    position: absolute;
+    display: block;
+    width: 150px;
+    height: 250px;
+    /* background: #fff; */
+    text-align: center;
+    transform: perspective(1000px) rotate(-60deg) skew(25deg) translate(0, 0);
+    transition: .5s;
+    box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 0px 2px black;
+    /* z-index: 0; */
+}
+
+.stackUp .layerClass a:before {
+    content: '';
+    position: absolute;
+    top: 13px;
+    left: -50px;
+    height: 100%;
+    width: 50px;
+    /* background: #b1b1b1; */
+    transition: .5s;
+    transform: rotate(0deg) skewY(-25deg);
+    /* box-shadow: inset 1px 1px 10px 0px #000000; */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    border: 2px solid black;
+}
+
+.stackUp .layerClass a:after {
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: -25px;
+    height: 25px;
+    width: 100%;
+    /* background: #b1b1b1; */
+    transition: .5s;
+    transform: rotate(0deg) skewX(-65deg);
+    /* box-shadow: inset 1px 1px 10px 0px #000000; */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    border: 2px solid black;
+}
+
+
+/* ul li a:hover{
+    transform: perspective(0px) rotate(0deg) skew(0deg) translate(0px, 0px);
+    box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    z-index: 999999;
+}
+ul li a:hover:after{
+    display: none;
+    z-index: ;
+} 
+ul li a:hover:before{
+    display: none;
+}*/
+
+.stackUp .layerClass:hover .fa {
+    color: #fff;
+    -webkit-backface-visibility: hidden;
+}
+
+.copperLayer {
+    background: #db8c32;
+}
+
+.copperLayer:after {
+    background: #db8c32;
+}
+
+.copperLayer:before {
+    background: #db8c32;
+}
+
+.isolator {
+    background: #f7f7a1;
+}
+
+.isolator:after {
+    background: #f7f7a1;
+}
+
+.isolator:before {
+    background: #f7f7a1;
+    /*,529f0c*/
+}
+
+.mask {
+    background: #529f0c;
+}
+
+.mask:after {
+    background: #529f0c;
+}
+
+.mask:before {
+    background: #529f0c;
+    /*,529f0c*/
+}
+
+.core {
+    background: #efefef;
+}
+
+.core:after {
+    background: #efefef;
+}
+
+.core:before {
+    background: #efefef;
+}
+
+.coreSecondLayerBottom {
+    transform: perspective(1000px) rotate(-60deg) skew(25deg) translate(60px, -28px)!important;
+}
+
+.coreSecondLayerTOP {
+    transform: perspective(1000px) rotate(-60deg) skew(25deg) translate(-60px, 28px)!important;
+}
+
+.coreBread {
+    background: #db8c32!important;
+}
+
+.coreBread:after {
+    background: #db8c32!important;
+}
+
+.coreBread:before {
+    background: #db8c32!important;
+}
+
+.gold:after {
+    background: inherit;
+}
+
+.gold:before {
+    background: inherit;
+}
+.highlighs {
+    transition: transform 2s;
+    animation: blinker 1s alternate infinite;
+    /* animation:  */
+}
+
+@keyframes blinker {
+    0% {
+        opacity: .6;
+    }
+    /* 40%{opacity: .6;} */
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blinker {
+    0% {
+        opacity: .6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* 
+.stackUp li:nth-child(1) a{
+    background: #de9432;
+    opacity: 0.8;
+}
+.stackUp li:nth-child(1) a:before{
+    background: #de9432;
+}
+.stackUp li:nth-child(1) a:after{
+    background: #de9432;
+}
+
+.stackUp li:nth-child(2) a{
+    background: #d1d974;
+    opacity: 0.8;
+}
+.stackUp li:nth-child(2) a:before{
+    background: #d1d974;
+}
+.stackUp li:nth-child(2) a:after{
+    background: #d1d974;
+}
+
+.stackUp li:nth-child(3) a{
+    background: #32599b;
+    opacity: 0.8;
+}
+.stackUp li:nth-child(3) a:before{
+    background: #32599b;
+}
+.stackUp li:nth-child(3) a:after{
+    background: #32599b;
+}
+
+.stackUp li:nth-child(4) a{
+    background: #529f0c;
+    opacity: 0.8;
+}
+.stackUp li:nth-child(4) a:before{
+    background: #529f0c;
+}
+.stackUp li:nth-child(4) a:after{
+    background: #529f0c;
+} */

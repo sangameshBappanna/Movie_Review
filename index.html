@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="js/datetimepicker/datetimepicker.css" type="text/css">
+    <link rel="stylesheet" href="DataTables/datatables.css" type="text/css">
+    <link type="text/css" rel="stylesheet" href="js/simplePagination.css" />
+</head>
+<style>
+    .nav-link {
+        color: black;
+    }
+    
+    .nav-link .active {
+        color: blue;
+    }
+    
+    .gridset {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+</style>
+
+<body>
+    <div class="container-fluid mt-3">
+        <div class="card">
+            <div class="card-header gridset">
+                <div>
+                    <button class="btn btn-sm btn-primary typeBtns" id="topRated" aria-current="page" onclick="searchType('topRated')">Top Rated Movies</button>
+                    <button class="btn btn-sm typeBtns" id="upcoming" onclick="searchType('upcoming')">Upcoming Movies</button>
+                </div>
+                <div class="form-group d-flex">
+                    <input class="form-control form-control-sm" type="text" id="movieSearchID">
+                    <button class="btn btn-primary btn-sm" onclick="movieSearch()">Search</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="paginationMovie">
+
+                </div>
+                <table class="table table-bordered" id="moviesListing">
+                    <thead>
+                        <tr>
+                            <th style="width:15%">Title</th>
+                            <th>Overview</th>
+                            <th style="width:10%">Release Date</th>
+                            <th style="width:8%">Avg Vote</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="paginationMovie">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
+<script type="text/javascript" src="DataTables/datatables.js"></script>
+<script>
+    $(window).on('load', function() {
+        getMovies('topRated');
+        localStorage['rememberType'] = 'all';
+        localStorage['type'] = 'topRated';
+    });
+
+    function movieSearch(page = 1) {
+        localStorage['rememberType'] = 'search';
+        $('#moviesListing').DataTable().destroy();
+        var searchText = $('#movieSearchID').val();
+        $('.typeBtns').each(function() {
+            $(this).removeClass('btn-primary');
+        });
+        $.ajax({
+            /* the route pointing to the post function */
+            url: 'api/getMovies.php',
+            type: 'POST',
+            async: false,
+            /* send the csrf-token and the input to the controller */
+            data: {
+                'searchField': searchText,
+                'page': page
+            },
+            dataType: 'JSON',
+            /* remind that 'response' is the response of the AjaxController */
+            success: function(response) {
+                $('#moviesListing').DataTable().destroy();
+                dataTableInit(response.results);
+                pagination(response.total_pages, response.page);
+            },
+            error: function(result) {
+                //console.log(result);
+                console.log('Failed to connect!!!!!!');
+
+            }
+        });
+    }
+
+    function searchType(type) {
+        localStorage['type'] = type;
+        localStorage['rememberType'] = 'all';
+        getMovies(type);
+    }
+
+    function getMovies(type, page = 1) {
+        $('#movieSearchID').val('');
+        $('.typeBtns').each(function() {
+            $(this).removeClass('btn-primary');
+        });
+        $('#' + type).addClass('btn-primary');
+        var is_valid = true;
+        if (is_valid) {
+            $.ajax({
+                /* the route pointing to the post function */
+                url: 'api/getMovies.php',
+                type: 'POST',
+                async: false,
+                /* send the csrf-token and the input to the controller */
+                data: {
+                    'type': type,
+                    'page': page,
+                },
+                dataType: 'JSON',
+                /* remind that 'response' is the response of the AjaxController */
+                success: function(response) {
+                    $('#moviesListing').DataTable().destroy();
+                    dataTableInit(response.results);
+                    pagination(response.total_pages, response.page);
+                },
+                error: function(result) {
+                    //console.log(result);
+                    console.log('Failed to connect!!!!!!');
+
+                }
+            });
+        }
+    }
+
+    function dataTableInit(data) {
+        $('#moviesListing').DataTable({
+            data: data,
+            searching: false,
+            columns: [{
+                data: 'title'
+            }, {
+                data: 'overview'
+            }, {
+                data: 'release_date'
+            }, {
+                data: 'vote_average'
+            }],
+            paging: false,
+            ordering: false,
+            info: false
+        });
+    }
+
+    function pagination(numperofPages, selectedPage) {
+        $('#paginationMovie').pagination('destroy');
+        $('.paginationMovie').pagination({
+            pages: numperofPages,
+            cssStyle: 'light-theme',
+            currentPage: selectedPage,
+            onPageClick(pageNumber, event) {
+                if (localStorage['rememberType'] == 'search') {
+                    movieSearch(pageNumber)
+                } else {
+                    getMovies(localStorage['type'], pageNumber)
+                }
+            }
+        });
+    }
+</script>
+
+</html>

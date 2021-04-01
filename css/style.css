@@ -1,0 +1,366 @@
+/*html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}*/
+::-moz-scrollbar{
+  width: 5px;
+  background-color: #003e79;
+}
+::-moz-scrollbar-thumb{
+  width: 5px;
+  background-color: #6c757dcc;
+  border-radius: 5px;
+}
+::-webkit-scrollbar{
+  width: 5px;
+  background-color: #003e79;
+
+}
+::-webkit-scrollbar-thumb{
+  width: 5px;
+  background-color: #6c757dcc;
+  border-radius: 5px;
+}
+.customContainer{
+	padding:20px
+}
+body{
+ 	font-family: Arial, Helvetica, sans-serif!important;
+    font-size: 12px;
+    }
+.my-scrollbar {
+  width: 100%;
+  height: 35em;
+  overflow: auto;
+}
+.ErrorMessage{
+	background-color: #ff000078;
+	color : white;
+	margin: 10px auto;
+	padding :5px 5px;
+	border-radius:5px;
+  border: 1.5px solid #ff000054;
+  text-align: center;
+}
+.successMessage{
+	background-color:#00800096;
+	color : white;
+	margin: 10px auto;
+	padding :5px 5px;
+  border-radius:5px;
+  border: 1.5px solid #008000ba;
+  text-align: center;
+}
+
+
+.tox-statusbar__branding{
+  display: none!important;
+}
+
+.nopadding{
+  padding: 0;
+}
+
+.page-link{
+  padding-top: 2px;padding-bottom: 2px
+}
+
+
+/*----------------------------Language-------------------*/
+  .vline{
+    border-left: 1px solid #80808063;
+    /*padding: 0px 3px;*/
+  }
+  .lanActive{
+    box-shadow: 0px 2px 9px 6px #80808063;
+    /*background-color: #80808063;*/
+  }
+  .modal-header{
+    background-color: #003e79;
+    color: white;
+  }
+
+/*----------------------------Language END-------------------*/
+  .btn-link{
+    text-decoration-line: none!important;
+    text-decoration-style: none!important;
+    color: black!important;
+  }
+.link_tab > div:hover{
+  box-shadow: 1px 1px 9px 3px white;
+  transition: 1s;
+}
+.close{
+  color: #fff;
+}
+.close:hover{
+  color: white;
+}
+.row{
+  margin: 0px;
+}
+.unimicron-bg{
+  background-color: #003e79;
+}
+.unimicron-white{
+  background-color: #FFF;
+  
+}
+.unimicron-warning{
+  background-color: #febb33;
+}
+
+.unimicron-complete{
+  background-color: green;
+}
+
+.unimicron-col-white{
+  color: #FFF!important;
+}
+.unimicron-col{
+  color: #003e79;
+}
+
+.unimicron-red{
+  background-color: #ea2720;
+}
+
+.unimicron-bg-l1{
+  background-color: #336696;
+}
+.unimicron-col-l1{
+  color: #336696;
+}
+.help-icon{
+  cursor: pointer;
+}
+.pd-10{
+  padding: 10px;
+}
+.m-10{
+  margin: 10px;
+}
+.mb-10{
+  margin-bottom: 20px;
+}
+.m-4percent{
+	margin:3%;
+}
+.btn-shade{
+  box-shadow: 0px 0px 1px 0px #000;
+  margin: 5px 10px;
+}
+
+.row-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row-content {
+  height: 100%;
+  padding: 20px 20px 10px;
+  color: #fff;
+}
+.nav-item{
+  cursor: pointer!important;
+}
+.pdd-10{
+  padding: 10px;
+}
+
+
+/*------------------------------------------FILE UPLOAD----------------------------- */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+/*------------------------------------------FILE UPLOAD END ----------------------------- */
+
+
+.card{
+  border: none;
+  box-shadow: 0px 0px 2px 0px #9c9797;
+}
+
+/*------------------------------------------ CARD ----------------------------- */
+
+.sideItem{
+  text-decoration: none!important;
+}
+.sideItem > div{
+  padding: 18px 15px;
+  color: #6c757d ;
+
+}
+.sideItem > div.active{
+  background-color: #336696;
+  color: #FFF;
+}
+.sideItem > div:hover{
+  padding: 20px 30px;
+  background-color: #336696;
+  color: #FFF;
+  transition: 1s ;
+}
+
+/*------------------------------------------ CARD END ----------------------------- */
+
+
+/*--------------------------------LOGIN--------------------------*/
+
+.box{
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: 0 auto;
+  box-shadow: -1px 1px 15px 1px #003e79;
+  background-color: #003e79;
+  padding-top: 60px;
+  padding-bottom:  60px;
+  
+}
+.big_box{
+  width: 100%;
+  max-width: 500px;
+}
+.box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.form-signin {
+}
+.box .checkbox {
+  font-weight: 400;
+}
+.box .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.box .form-control:focus {
+  z-index: 2;
+}
+.box input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.box input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.grid {
+  width: 100%;
+  height: 400px;
+}
+.ui-grid-cell-contents-break {
+   padding: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+
+  overflow: hidden;
+  height: 100%;
+
+  word-break: break-all;
+}
+.ui-grid-header-cell .ui-grid-cell-contents {
+   height: auto !important;
+   white-space: normal;
+   -ms-text-overflow: clip;
+   -o-text-overflow: clip;
+   text-overflow: clip;
+   overflow: visible;
+ }
+ 
+ 
+ 
+ 
+ /* ---------------------------------------- EDITABLE content ----------------------------- */
+
+[contenteditable]:hover {
+    background-color: #f5f5f5;
+    border: 2px dotted #999;	
+}
+
+[contenteditable=false] {
+    border: 0px!important;
+    background-color: transparent!important;
+    padding: 0px!important;
+    min-height:0px!important;
+}
+[contenteditable] {
+    border: 2px dotted #ccc;
+    background-color: #eee;
+    padding: 5px 2px;
+    min-height:38px;
+}
+
+.checkBoxBtn{
+	padding:5px;
+	background-color:#003e79;
+	color:#FFF;
+	border-radius: 2%;
+}
+.etchingView.blinker{
+	cursor:pointer;
+	transition: transform 2s;
+    animation: blinker 1s alternate infinite;
+}
+
+
+@keyframes blinker {
+    0% {
+        opacity: .6;
+    }
+    /* 40%{opacity: .6;} */
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blinker {
+    0% {
+        opacity: .6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
